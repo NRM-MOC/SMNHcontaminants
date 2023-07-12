@@ -47,7 +47,6 @@ database with 41 columns
  \item{longitude}{Longitude of the station, WGS84 projection system}
  \item{HELCOM_basin}{HELCOM basin divisions to which belongs the station, see Helcom basin divisions at https://helcom.fi/}
  \item{ICES_basin}{ICES basin divisions to which belongs the station, see ICES basin divisions at https://www.ices.dk/}
- \item{SMNH_basin}{Basins divisions used within the monitoring program, Soerensen and Faxneld 2020}
  \item{season}{Sampling season spring March to mid-July or autumn mid-July to December}
 }
 }

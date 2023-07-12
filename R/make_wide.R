@@ -15,14 +15,13 @@
 make_wide <- function(ContaminantsDB, group , bio = c("year", "date", "species", "species_EN",  "class",
                                                                 "number_individuals","sex", "total_length","age", "weight",
                                                                 "shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage",
-                                                                "station_name", "latitude", "longitude", "HELCOM_basin", "ICES_basin",
-                                                                "SMNH_basin"), Averages = TRUE){
+                                                                "station_name", "latitude", "longitude", "HELCOM_basin", "ICES_basin"), Averages = TRUE){
   cont <- ContaminantsDB |>
     filter((substance_group %in% group) | substance_group == "all") |>
     mutate(value = ifelse(is_censored == TRUE, paste0("<", value), as.character(value))) |>
     select(specimen_ID, contaminant, value) |>
     group_by(specimen_ID, contaminant) |>
-    summarise(value = value[1], substance_group = "drop") |>
+    summarise(value = value[1]) |>
     pivot_wider(names_from = "contaminant", values_from = "value")
 
   bio <- ContaminantsDB |> select(specimen_ID, all_of(bio)) |>

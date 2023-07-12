@@ -6,7 +6,7 @@
 \usage{
 make_wide(
   ContaminantsDB,
-  Substance_group,
+  group,
   bio = c("year", "date", "species", "species_EN", "class", "number_individuals", "sex",
     "total_length", "age", "weight", "shell_thickness", "d13C", "d15N",
     "C_dw_percentage", "N_dw_percentage", "station_name", "latitude", "longitude",
@@ -17,7 +17,7 @@ make_wide(
 \arguments{
 \item{ContaminantsDB}{data table of contaminants in marine biota presented in a long format.}
 
-\item{Substance_group}{the contaminants substance groups. Choose from:  "all", "Metals","PFAS","PCBs", "Dioxins and furans" , "Pesticides","BFRs", "Solvents-phenols","PAH". "Organotin compounds" .}
+\item{group}{the contaminants substance groups. Choose from:  "all", "Metals","PFAS","PCBs", "Dioxins and furans" , "Pesticides","BFRs", "Solvents-phenols","PAH". "Organotin compounds" .}
 
 \item{bio}{choose from: "Year", "Date", "Species", "English_name",  "Class","Number_individual","Sex", "Total_length","Age", "Weight","Shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage","Station_name", "Latitude", "Longitude", "Helcom_basin", "Ices_basin","SMNH_basin".}
 
@@ -30,7 +30,7 @@ database in wide format with contaminants in separate columns.
 Wide format for contaminants in marine biota database.
 }
 \examples{
-make_wide(contaminantsDB, "Metals") |>  glimpse() |> View()
-make_wide(contaminantsDB, "BFRs") |> write_csv2(file = "BFRs.csv")
+make_wide(ContaminantsDB, "Metals") |>  glimpse() |> View()
+make_wide(ContaminantsDB, "BFRs") |> write_csv2(file = "BFRs.csv")
 
 }
