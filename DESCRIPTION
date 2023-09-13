@@ -2,10 +2,9 @@ Package: SMNHcontaminants
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
+Author: M Sköld built a version of this package; Y Ammar built the database and updated the package to this version.
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package is built to contain a database of the Swedish national monitoring program for contaminants in marine biota. It also includes a function to shift the table to a wide format.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
