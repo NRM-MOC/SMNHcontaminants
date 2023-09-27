@@ -3,7 +3,7 @@
 #'
 #' @param ContaminantsDB data table of contaminants in marine biota presented in a long format.
 #' @param group the contaminants substance groups. Choose from:  "all", "Metals","PFAS","PCBs", "Dioxins and furans" , "Pesticides","BFRs", "Solvents-phenols","PAH". "Organotin compounds" .
-#' @param bio choose from: "Year", "Date", "Species", "English_name",  "Class","Number_individual","Sex", "Total_length","Age", "Weight","Shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage","Station_name", "Latitude", "Longitude", "Helcom_basin", "Ices_basin","SMNH_basin".
+#' @param bio choose from:"year", "date", "species", "species_EN",  "class","number_individuals","sex", "total_length","age", "weight","shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage", "fat_percentage","station_name", "latitude", "longitude", "HELCOM_basin", "ICES_basin", "season"
 #' @param Averages add the average of fat percentage and dry weight percentage.
 #'
 #' @return database in wide format with contaminants in separate columns.
@@ -14,8 +14,8 @@
 #'
 make_wide <- function(ContaminantsDB, group , bio = c("year", "date", "species", "species_EN",  "class",
                                                                 "number_individuals","sex", "total_length","age", "weight",
-                                                                "shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage",
-                                                                "station_name", "latitude", "longitude", "HELCOM_basin", "ICES_basin"), Averages = TRUE){
+                                                                "shell_thickness" ,  "d13C", "d15N","C_dw_percentage", "N_dw_percentage", "fat_percentage",
+                                                                "station_name", "latitude", "longitude", "HELCOM_basin", "ICES_basin", "season"), Averages = TRUE){
   cont <- ContaminantsDB |>
     filter((substance_group %in% group) | substance_group == "all") |>
     mutate(value = ifelse(is_censored == TRUE, paste0("<", value), as.character(value))) |>
