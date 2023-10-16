@@ -12,7 +12,7 @@
 #'  \item{species_EN}{Common English name of the species}
 #'  \item{class}{Species class: Fish, Birds, Bivalves}
 #'  \item{number_individuals}{The number of specimen in the homogenate; else is 1}
-#'  \item{sample_lab_ID}{Describes the sample sent to the labs for specific analysis and is a merger between the specimen_ID, the organ and the analytical method}
+#'  \item{sample_ID}{Describes the sample sent to the labs for specific analysis and is a merger between the specimen_ID, the organ and the analytical method}
 #'  \item{substance_group}{Metals; PFAS; PCBs; Dioxins and furans; Pesticides; BFRs; Solvents-phenols; PAH; Organotin compounds}
 #'  \item{contaminant}{Acronym name for the contaminant}
 #'  \item{value}{Raw concentration reported by the lab, or threshold if value is below LOQ or LOD}
